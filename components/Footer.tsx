@@ -21,7 +21,7 @@ const Footer = () => {
           présence digital au niveau supérieur ?
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Contactez-moi aujourd'hui et discutons de la manière dont je peux vous aider à atteindre vos objectifs.
+          Contactez-moi aujourd&apos;hui et discutons de la manière dont je peux vous aider à atteindre vos objectifs.
         </p>
         <a href="mailto:erwandurand91090@gmail.com">
           <MagicButton
