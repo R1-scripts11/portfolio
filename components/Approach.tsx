@@ -2,6 +2,7 @@ import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
+import { method } from "@/data";
 
 const Approach = () => {
   return (
@@ -9,23 +10,27 @@ const Approach = () => {
       <h1 className="heading">
         Ma <span className="text-purple">méthodologie</span>
       </h1>
+
       {/* remove bg-white dark:bg-black */}
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         {/* add des prop */}
-        <Card
-          title="Planning & Strategy"
-          icon={<AceternityIcon order="Phase 1" />}
-          des="We'll collaborate to map out your website's goals, target audience, 
-          and key functionalities. We'll discuss things like site structure, 
-          navigation, and content requirements."
-        >
-          <CanvasRevealEffect
-            animationSpeed={5.1}
-            // add these classed for the border rounded overflowing -> rounded-3xl overflow-hidden
-            containerClassName="bg-emerald-900 rounded-3xl overflow-hidden"
-          />
-        </Card>
-        <Card
+        {method.map((approche) =>     
+          <Card
+            title={approche.title}
+            icon={<AceternityIcon order={approche.btnTitle} />}
+            des={approche.content}
+          >
+            <CanvasRevealEffect
+              animationSpeed={approche.canva_animationSpeed}
+              // add these classed for the border rounded overflowing -> rounded-3xl overflow-hidden
+              containerClassName={approche.containerClassName}
+              colors={approche.colors ?? [[0, 255, 255]]}
+              dotSize={approche.dotSize ?? 5 }
+            />
+          </Card>
+        )}
+
+        {/* <Card
           title="Development & Progress Update"
           icon={<AceternityIcon order="Phase 2" />}
           des="Once we agree on the plan, I cue my lofi playlist and dive into
@@ -42,11 +47,11 @@ const Approach = () => {
               [221, 255, 247],
             ]}
             dotSize={2}
-          />
+          /> */}
           {/* Radial gradient for the cute fade */}
           {/* remove this one */}
           {/* <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" /> */}
-        </Card>
+        {/* </Card>
         <Card
           title="Development & Launch"
           icon={<AceternityIcon order="Phase 3" />}
@@ -59,7 +64,7 @@ const Approach = () => {
             containerClassName="bg-sky-600 rounded-3xl overflow-hidden"
             colors={[[125, 211, 252]]}
           />
-        </Card>
+        </Card> */}
       </div>
     </section>
   );

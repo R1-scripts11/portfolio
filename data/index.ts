@@ -5,10 +5,41 @@ export const navItems = [
   { name: "Contact", link: "#contact" },
 ];
 
+export const method = [
+  {
+    id:1,
+    title:"Planification",
+    content:"Rédaction du cahier des charges, gestion du développement selon la méthodologie Agile avec Kanban (via Trello) et estimation des temps de travail. Création des maquettes de la base de données (diagramme UML) et de l'interface utilisateur.",
+    canva_animationSpeed:5.1,
+    containerClassName:"bg-emerald-900 rounded-3xl overflow-hidden",
+    btnTitle:"Phase 1"
+  },
+  {
+    id:2,
+    title:"Développement",
+    content:"Mise en place de l'environnement de développement (avec Docker si nécessaire) ainsi que de la base de données. Développement du backend, implémentation des fonctionnalités et réalisation des tests. Développement du frontend. Organisation de points hebdomadaires avec le client pour obtenir des retours réguliers et garantir une flexibilité dans le projet.",
+    canva_animationSpeed:3,
+    containerClassName:"bg-pink-900 rounded-3xl overflow-hidden",
+    colors:[[255, 166, 158],[221, 255, 247],],
+    dotSize:2,
+    btnTitle:"Phase 2"
+  },
+  {
+    id:3,
+    title:"Intégration & Lancement",
+    content:"Mise en place des environnements de préproduction et de production (facilité par l'utilisation de Docker). Déploiement de l'application, suivi par une phase de surveillance et de maintenance pour résoudre les bugs et effectuer les modifications demandées par le client, après validation par le Product Owner (PO) ou les développeurs.",
+    canva_animationSpeed:3,
+    containerClassName:"bg-sky-600 rounded-3xl overflow-hidden",
+    colors:[[125, 211, 252]],
+    btnTitle:"Phase 3"
+  }
+
+]
+
 export const gridItems = [
   {
     id: 1,
-    title: "Je privilégie la collaboration avec le client, en favorisant une communication ouverte",
+    title: "Je privilégie la communication avec le client",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -173,32 +204,32 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
-    className: "md:col-span-2",
+    title: "Développeur Full Stack -📄 Alternance  -🕣 3 ans ",
+    desc: "Maintenance et ajout de fonctionnalités et développement de nouveaux logiciels  sur le parc applicatif interne et développement d'interfaces hommes machine sur les robots, au sein de la société FANUC FRANCE à Lisses. Technologies utilisées : PHP,HTML,CSS,Javascript,Bash,PS,KAREL",
+    className: "md:col-span-4",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+    title: "Développeur Full Stack -📄 Stage  -🕣 2 mois ",
+    desc: "Stage de deux mois ou j'ai développé en collaboration un CRM pour la gestion d'une école. Symfony / Bootstrap",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+    title: "Développeur passionée",
+    desc: "Je développe aussi sur mon temps libre, car j'aime ça.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg",
   },
-  {
-    id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
-    className: "md:col-span-2",
-    thumbnail: "/exp4.svg",
-  },
+  // {
+  //   id: 4,
+  //   title: "Lead Frontend Developer",
+  //   desc: "Developed and maintained user-facing features using modern frontend technologies.",
+  //   className: "md:col-span-2",
+  //   thumbnail: "/exp4.svg",
+  // },
 ];
 
 export const socialMedia = [
