@@ -3,7 +3,7 @@ import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 
 const Grid = () => {
   return (
-    <section id="about">
+
       <BentoGrid className="w-full ">
         {gridItems.map((item, i) => (
           <BentoGridItem
@@ -21,7 +21,7 @@ const Grid = () => {
           />
         ))}
       </BentoGrid>
-    </section>
+
   );
 };
 

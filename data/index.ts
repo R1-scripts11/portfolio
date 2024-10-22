@@ -13,12 +13,12 @@ export const gridItems = [
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
-    img: "/b1.svg",
+    img: "/erwancomputer.svg",
     spareImg: "",
   },
   {
     id: 2,
-    title: "Je suis très flexible avec les communications en fonction du fuseau horaire",
+    title: "Portfolio fait avec les composants d'Aceternity",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -28,7 +28,7 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "My tech stack",
+    title: "Ma stack technique",
     description: "J'essaie constamment de m'améliorer",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -50,7 +50,7 @@ export const gridItems = [
   {
     id: 5,
     title: "Développement d'un blog actuellement",
-    description: "Porjet en court...",
+    description: "Projet en court...",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -80,11 +80,11 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
+    title: "Documentation de grappling",
+    des: "Une documentation qui regroupe des techniques de grappling pour les adeptes du combat au sol !",
     img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "/https://r1documentation.vercel.app/",
   },
   // {
   //   id: 3,
@@ -207,12 +207,13 @@ export const socialMedia = [
     img: "/git.svg",
     link:"https://github.com/R1-scripts11"
   },
-  {
-    id: 2,
-    img: "/twit.svg",
-  },
+  // {
+  //   id: 2,
+  //   img: "/twit.svg",
+  // },
   {
     id: 3,
     img: "/link.svg",
-  },
+    link:"https://www.linkedin.com/in/erwan-durand-755793205/"
+  }
 ];
