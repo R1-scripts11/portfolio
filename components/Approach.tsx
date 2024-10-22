@@ -16,6 +16,7 @@ const Approach = () => {
         {/* add des prop */}
         {method.map((approche) =>     
           <Card
+            key={approche.id}
             title={approche.title}
             icon={<AceternityIcon order={approche.btnTitle} />}
             des={approche.content}
