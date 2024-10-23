@@ -1,7 +1,8 @@
 import { gridItems } from "@/data";
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
+import React from 'react'
 
-const Grid = () => {
+const Grid = React.memo(() => {
   return (
 
       <BentoGrid className="w-full ">
@@ -23,6 +24,6 @@ const Grid = () => {
       </BentoGrid>
 
   );
-};
+});
 
 export default Grid;

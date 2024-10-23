@@ -5,8 +5,9 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
 import Image from 'next/image'
+import React from 'react'
 
-const RecentProjects = () => {
+const RecentProjects = React.memo(() => {
   return (
     <div className="py-20">
       <h1 className="heading py-20">
@@ -81,6 +82,6 @@ const RecentProjects = () => {
       </div>
     </div>
   );
-};
+});
 
 export default RecentProjects;

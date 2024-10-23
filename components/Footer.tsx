@@ -3,8 +3,9 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 import Image from "next/image";
+import React from 'react';
 
-const Footer = () => {
+const Footer = React.memo(() => {
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
       {/* background grid */}
@@ -12,15 +13,15 @@ const Footer = () => {
         <Image
           src="/footer-grid.svg"
           alt="grid"
-          className="w-full h-full opacity-50 "
+          className="w-full h-full "
           width="500" height="500"
         />
       </div>
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
-          Prêt à faire passer <span className="text-purple">votre </span> 
-          présence digital au niveau supérieur ?
+          Faire passer <span className="text-purple">son </span> 
+          digital au niveau supérieur.
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
           Contactez-moi aujourd&apos;hui et discutons de la manière dont je peux vous aider à atteindre vos objectifs.
@@ -51,6 +52,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+});
 
 export default Footer;

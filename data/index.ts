@@ -104,7 +104,7 @@ export const projects = [
   {
     id: 1,
     title: "Blog pour regrouper les connaissances",
-    des: "Le blog est fait avec React Express Bootstrap et bientôt Next JS ! .",
+    des: "Le blog est fait avec React Express Bootstrap et bientôt Next JS !. En cours de création",
     img: "/Blog.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "/ui.earth.com",
@@ -113,7 +113,7 @@ export const projects = [
     id: 2,
     title: "Documentation de grappling",
     des: "Une documentation qui regroupe des techniques de grappling pour les adeptes du combat au sol !",
-    img: "/p2.svg",
+    img: "/grappling.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
     link: "/https://r1documentation.vercel.app/",
   },

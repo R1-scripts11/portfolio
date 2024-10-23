@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
 import { method } from "@/data";
 
-const Approach = () => {
+const Approach = React.memo(() => {
   return (
     <section className="w-full py-20">
       <h1 className="heading">
@@ -69,7 +69,7 @@ const Approach = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Approach;
 
