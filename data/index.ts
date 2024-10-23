@@ -59,7 +59,7 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "Ma stack technique",
+    title: "Stack technique",
     description: "J'essaie constamment de m'améliorer",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
