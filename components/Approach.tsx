@@ -6,9 +6,9 @@ import { method } from "@/data";
 
 const Approach = React.memo(() => {
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-20 dark:bg-black-100 bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] ">
       <h1 className="heading">
-        Ma <span className="text-purple">méthodologie</span>
+        Ma <span className="text-purple">méthode de travail</span>
       </h1>
 
       {/* remove bg-white dark:bg-black */}

@@ -19,10 +19,17 @@ const RecentProjects = React.memo(() => {
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={item.id}
+            onClick={() => window.open(item.link, '_blank')}
           >
+          {/* <a
+            href={item.link} // Assurez-vous que "item.link" contient l'URL du projet
+            target="_blank" // Ouvrir dans un nouvel onglet
+            rel="noopener noreferrer" // Meilleure sécurité
+            key={item.id}
+            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+          > */}
             <PinContainer
-              title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
+              title={item.link}
             >
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                 <div
@@ -77,7 +84,9 @@ const RecentProjects = React.memo(() => {
                 </div>
               </div>
             </PinContainer>
+            {/* </a> */}
           </div>
+          
         ))}
       </div>
     </div>
