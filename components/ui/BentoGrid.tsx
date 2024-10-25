@@ -9,13 +9,13 @@ import Image from 'next/image';
 import React from 'react';
 
 // Optimisation avec React.memo pour éviter les re-rendus inutiles
-export const BentoGrid = React.memo(({
+function BentoGrid({
   className,
   children,
 }: {
   className?: string;
   children?: React.ReactNode;
-}) => {
+}) {
   return (
     <div className="w-full dark:bg-black-100 bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] ">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
@@ -26,24 +26,26 @@ export const BentoGrid = React.memo(({
       </div>
     </div>
   );
-});
+}
 
 // Fonction de rendu pour les stacks techniques
-const renderTechStack = (list: string[]) => (
-  <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-    {list.map((item, i) => (
-      <span
-        key={i}
-        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-      >
-        {item}
-      </span>
-    ))}
-  </div>
-);
+function renderTechStack(list: string[]) {
+  return (
+    <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
+      {list.map((item, i) => (
+        <span
+          key={i}
+          className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+        >
+          {item}
+        </span>
+      ))}
+    </div>
+  );
+}
 
 // Composant optimisé pour le rendu des éléments de la grille
-export const BentoGridItem = React.memo(({
+function BentoGridItem({
   className,
   id,
   title,
@@ -61,7 +63,7 @@ export const BentoGridItem = React.memo(({
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;
-}) => {
+}) {
   const leftLists = ["ReactJS/NEXTJS", "Express", "Typescript"];
   const rightLists = ["PHP", "SQL", "MSSQL"];
 
@@ -78,27 +80,26 @@ export const BentoGridItem = React.memo(({
     },
   };
 
-useEffect(() => {
-  const observer = new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) {
-      setShowAnimation(true);
-      if (ref.current) {
-        observer.unobserve(ref.current); // Arrêter d'observer après la première animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setShowAnimation(true);
+        if (ref.current) {
+          observer.unobserve(ref.current); // Arrêter d'observer après la première animation
+        }
       }
-    }
-  }, { threshold: 0.5 });
+    }, { threshold: 0.5 });
 
-  if (ref.current) {
-    observer.observe(ref.current); // Vérifie si ref.current n'est pas null
-  }
-
-  return () => {
     if (ref.current) {
-      observer.unobserve(ref.current); // Vérifie à nouveau dans le cleanup
+      observer.observe(ref.current); // Vérifie si ref.current n'est pas null
     }
-  };
-}, []);
 
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current); // Vérifie à nouveau dans le cleanup
+      }
+    };
+  }, []);
 
   const handleCopy = () => {
     const text = "erwandurand91090@gmail.com";
@@ -189,4 +190,10 @@ useEffect(() => {
       </div>
     </div>
   );
-});
+}
+
+const MemoizedBentoGrid = React.memo(BentoGrid);
+const MemoizedBentoGridItem = React.memo(BentoGridItem);
+
+export { MemoizedBentoGrid as BentoGrid, MemoizedBentoGridItem as BentoGridItem };
+

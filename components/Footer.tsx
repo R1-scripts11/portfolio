@@ -4,7 +4,7 @@ import MagicButton from "./MagicButton";
 import Image from "next/image";
 import React from 'react';
 
-const Footer = React.memo(() => {
+function Footer () {
   return (
     <footer className="w-full pt-20 pb-10 relative bg-black-100" id="contact">
       
@@ -52,6 +52,6 @@ const Footer = React.memo(() => {
       </div>
     </footer>
   );
-});
+};
 
-export default Footer;
+export default React.memo(Footer);

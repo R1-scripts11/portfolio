@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
 import { method } from "@/data";
 
-const Approach = React.memo(() => {
+function Approach () {
   return (
     <section className="w-full py-20 dark:bg-black-100 bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] ">
       <h1 className="heading">
@@ -69,9 +69,9 @@ const Approach = React.memo(() => {
       </div>
     </section>
   );
-});
+};
 
-export default Approach;
+export default React.memo(Approach);
 
 const Card = ({
   title,

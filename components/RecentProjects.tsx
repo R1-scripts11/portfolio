@@ -7,7 +7,7 @@ import { PinContainer } from "./ui/Pin";
 import Image from 'next/image'
 import React from 'react'
 
-const RecentProjects = React.memo(() => {
+function RecentProjects(){
   return (
     <div className="py-20">
       <h1 className="heading py-20">
@@ -91,6 +91,6 @@ const RecentProjects = React.memo(() => {
       </div>
     </div>
   );
-});
+};
 
-export default RecentProjects;
+export default React.memo(RecentProjects);

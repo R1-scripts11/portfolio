@@ -4,7 +4,7 @@ import { workExperience } from "@/data";
 import { Button } from "./ui/MovingBorders";
 import Image from 'next/image';
 
-const Experience = React.memo(() => {
+function Experience () {
   return (
     <div className="py-20 w-full dark:bg-black-100 bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] ">
       <h1 className="heading">
@@ -52,6 +52,6 @@ const Experience = React.memo(() => {
       </div>
     </div>
   );
-});
+};
 
-export default Experience;
+export default React.memo(Experience);

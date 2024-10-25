@@ -13,7 +13,7 @@ import RecentProjects from "@/components/RecentProjects";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import React from 'react'
 
-const Home = React.memo(() => {
+function Home() {
   return (
       <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
         <div className="max-w-7xl w-full">
@@ -29,8 +29,7 @@ const Home = React.memo(() => {
           </TracingBeam>
         </div>
       </main>
-
   );
-});
+};
 
-export default Home;
+export default React.memo(Home);

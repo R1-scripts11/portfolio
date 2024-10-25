@@ -4,7 +4,7 @@ import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import React from 'react'
 
-const Hero = React.memo(() => {
+function Hero (){
   return (
     <div className="pb-5">
       <div>
@@ -64,6 +64,6 @@ const Hero = React.memo(() => {
 
     </div>
   );
-});
+};
 
-export default Hero;
+export default React.memo(Hero);
