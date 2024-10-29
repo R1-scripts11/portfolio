@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Modal } from '@/components/ui/modal';
+import { Modal } from '@/components/ui/Modal';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
@@ -19,11 +19,10 @@ function ExoAlgo() {
 
     return (
         <>
-        <div className="container grid grid-cols-2 gap-2 dark:bg-black-100 bg-white  dark:bg-dot-white/[0.4] bg-dot-black/[0.2]">
-            <Pair_impair copyToClipboard={copyToClipboard} copySuccess={copySuccess}/>
-            <Palyndrome/>
-        </div>
-            
+            <div className="container grid grid-cols-2 gap-2 dark:bg-black-100 bg-white  dark:bg-dot-white/[0.4] bg-dot-black/[0.2]">
+                <Pair_impair copyToClipboard={copyToClipboard} copySuccess={copySuccess}/>
+                <Palyndrome/>
+            </div>                
         </>
     );
 }
@@ -80,7 +79,7 @@ export function Pair_impair ( { copyToClipboard, copySuccess }: PairImpairProps 
 
                     <div className="p-2"> 
                         <h2 className="text-black text-center text-xl underline ">Écrire un Algorithme : Pair ou Impair</h2>
-                        <p className="text-black hover:text-blue-600">Écrivez une fonction qui retourne "pair" si le nombre est pair et "impair" sinon.</p>
+                        <p className="text-black hover:text-blue-600">Écrivez une fonction qui retourne &quot;pair&quot; si le nombre est pair et &quot;impair&quot; sinon.</p>
                     </div>
 
                     <div className='grid p-2'>
