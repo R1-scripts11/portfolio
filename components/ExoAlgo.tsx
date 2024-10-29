@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Modal } from '@/components/ui/Modal';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { MdContentCopy } from "react-icons/md";
 
 function ExoAlgo() {
 
@@ -10,7 +11,7 @@ function ExoAlgo() {
     const copyToClipboard = async (codeString : string) => {
         try {
             await navigator.clipboard.writeText(codeString);
-            setCopySuccess('Copié !');
+            setCopySuccess('Copié!');
             setTimeout(() => setCopySuccess(''), 2000); // Réinitialise le message après 2 secondes
         } catch (err) {
             setCopySuccess('Échec de la copie');
@@ -108,19 +109,20 @@ export function Pair_impair ( { copyToClipboard, copySuccess }: PairImpairProps 
                         {seeReponse && (
                         <>
                             <div className="col-span-2">
-                                <div className="flex rounded bg-gray-700 h-75 p-2">
+                                <div className="flex rounded bg-gray-700 h-75 p-2 w-full">
 
-                                    <SyntaxHighlighter language="javascript" style={nightOwl}>
+                                    <SyntaxHighlighter language="javascript" style={nightOwl} className="w-full">
                                         {codeString}      
                                                                          
                                     </SyntaxHighlighter>
                                         <button
                                             onClick={() => copyToClipboard(codeString)}
-                                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
+                                            className="text-white font-bold py-1 px-4"
+                                            style={{ background: "rgb(1, 22, 39)" }}
                                         >
-                                            Copier
+                                        {copySuccess ? ( <p className="text-green-500 mt-2">{copySuccess}</p> ) : ( <MdContentCopy size={20} />)} 
                                         </button>  
-                                        {copySuccess && <p className="text-green-500 mt-2">{copySuccess}</p>}                                    
+                                                                           
                                 </div>                                                
                             </div>         
                             <Modal/>    
