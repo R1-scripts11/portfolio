@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 
-export function Modal () {
+export function Modal ({ Explication }:{Explication : string}) {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     
     const openModal: () => void = () => setIsOpen(true)
@@ -49,6 +49,8 @@ export function Modal () {
                                 className="close"
                                 onClick={closeModal}
                                 style={{
+                                    top:"-1rem",
+                                    position:"relative",
                                     color: "#aaaaaa",
                                     float: "right",
                                     fontSize: "28px",
@@ -58,7 +60,9 @@ export function Modal () {
                             >
                                 &times;
                             </span>
-                            <p>Some text in the Modal...</p>
+                            <div className="text-black">
+                                {Explication}
+                            </div>
                         </div>
                     </div>
                 )}
