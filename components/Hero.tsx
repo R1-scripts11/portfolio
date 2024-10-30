@@ -50,14 +50,24 @@ function Hero (){
               <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
                 Durand Erwan, développeur full stack.
               </p>
-
-              <a href="https://github.com/R1-scripts11" target="_blank" rel="noopener noreferrer">
-                <MagicButton
-                  title="Mon Github"
-                  icon={<FaLocationArrow />}
-                  position="right"
-                />
-              </a>
+                
+              <div className="grid grid-cols-2 gap-4">
+                <a href="https://github.com/R1-scripts11" target="_blank" rel="noopener noreferrer">
+                  <MagicButton
+                    title="Mon Github"
+                    icon={<FaLocationArrow />}
+                    position="right"
+                  />
+                </a>
+                <a href="/exercices" target="_blank" rel="noopener noreferrer">
+                  <MagicButton
+                    title="Training Dev Page"
+                    icon={<FaLocationArrow />}
+                    position="right"
+                  />
+                </a>
+              </div>
+             
             </div>
           </div>
         </div>
