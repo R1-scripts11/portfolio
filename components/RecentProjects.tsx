@@ -14,7 +14,7 @@ function RecentProjects(){
         Petite sélection des {" "}
         <span className="text-purple">projets récent</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-16">
         {projects.map((item) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
@@ -31,7 +31,7 @@ function RecentProjects(){
             <PinContainer
               title={item.link}
             >
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden mb-10">
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
