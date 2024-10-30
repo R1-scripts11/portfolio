@@ -3,6 +3,7 @@ import { Modal } from '@/components/ui/Modal';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { MdContentCopy } from "react-icons/md";
+import  ExerciceCard  from "@/components/ExerciceCard"
 
 function ExoAlgo() {
 
@@ -20,9 +21,17 @@ function ExoAlgo() {
 
     return (
         <>
+        <h1 className="text-white text-center text-2xl underline ">Exercices ALGO avec javascript !</h1>
             <div className="container grid grid-cols-2 gap-2 dark:bg-black-100 bg-white  dark:bg-dot-white/[0.4] bg-dot-black/[0.2]">
                 <Pair_impair copyToClipboard={copyToClipboard} copySuccess={copySuccess}/>
                 <Palyndrome/>
+                <ExerciceCard 
+                    Title="ee" 
+                    Consigne="dd" 
+                    Reponse="dd" 
+                    InputType="d"
+                    Explication="fvze"
+                />
             </div>                
         </>
     );
@@ -80,7 +89,7 @@ export function Pair_impair ( { copyToClipboard, copySuccess }: PairImpairProps 
 
                     <div className="p-2"> 
                         <h2 className="text-black text-center text-xl underline ">Écrire un Algorithme : Pair ou Impair</h2>
-                        <p className="text-black hover:text-blue-600">Écrivez une fonction qui retourne &quot;pair&quot; si le nombre est pair et &quot;impair&quot; sinon.</p>
+                        <p className="text-black hover:text-blue-600">Écrivez une fonction qui retourne &quot;pair&quot; si le nombre est pair et &quot;impair&quot; sinon. LA VARIABLE DOIT S'APPELER 'nombre' et il faut juste écrire le contenu de la fonction.</p>
                     </div>
 
                     <div className='grid p-2'>
@@ -103,6 +112,7 @@ export function Pair_impair ( { copyToClipboard, copySuccess }: PairImpairProps 
                             {resultat && <div className="rounded bg-white-100 h-75 p-2 mt-2">{resultat}</div>}
                         </div>
                     </div>
+
                     <div className="p-2 grid grid-cols-2 gap-2">
                         <button onClick={executerCode} className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded p-2 col-span-1">Exécuter le code</button>
                         <button onClick={voirRéponse} className={`${ seeReponse ? "bg-orange-500 hover:bg-orange-700" : "bg-green-500 hover:bg-green-700"} text-white font-bold rounded p-2 col-span-1`}>{seeReponse ? "Masquer réponse" : "Voir réponse"}</button>
@@ -125,7 +135,7 @@ export function Pair_impair ( { copyToClipboard, copySuccess }: PairImpairProps 
                                                                            
                                 </div>                                                
                             </div>         
-                            <Modal/>    
+                            <Modal Explication="fzef"/>    
                          </>             
                         )}
                     </div>
@@ -137,13 +147,43 @@ export function Pair_impair ( { copyToClipboard, copySuccess }: PairImpairProps 
 
 export function Palyndrome () {
     const [code, setCode] = useState<string>('');
+    const [ motDonne, setMotDonne] = useState<string>('')
+    const [resFonction, setResFonction] = useState<string>('')
+    const [showReponse, setShowReponse] = useState<boolean>(false);
 
+
+    function executeCode(){
+        if(motDonne == ""){
+            setResFonction('Entrez un mot')
+        }else{
+            try {
+                const userFunction = new Function('mot', code);
+                const result = userFunction(motDonne);
+                console.log(result);
+                setResFonction(result);
+            } catch (error) {
+                console.error("Erreur de syntaxe :", error);
+                setResFonction("Erreur dans le code de la fonction");
+            }
+        }
+
+    }
+
+    function _showReponse () {
+        if(showReponse == false){
+            setShowReponse(true);
+        }else{
+            setShowReponse(false);
+        }
+    }
+
+    const reponse = 'if ((mot.split("").reverse().join("")) == mot){return "palyndrome"}else{return "ce mot n\'est pas un palyndrome"}'
     return(
     <>
         <div className="bg-slate-400 rounded overflow-hidden shadow-lg">        
             <div className="p-2"> 
                 <h2 className="text-black text-center text-xl underline ">Écrire un Algorithme : Palyndrome</h2>
-                <p className="text-black hover:text-blue-600">Écrivez une fonction vérifie si un mot est un Palyndrome.</p>
+                <p className="text-black hover:text-blue-600">Écrivez une fonction vérifie si un mot est un Palyndrome. LA VARIABLE DOIT S'APPELER 'mot'.</p>
             </div>
 
             <div className="grid p-2">
@@ -154,6 +194,30 @@ export function Palyndrome () {
                 />
             </div>
 
+            <div className="grid grid-cols-2 space-x-4 p-2">
+                <input 
+                id="mot"
+                type="text"
+                className="rounded p-2 col-span-1"
+                value={motDonne}
+                onChange={(e) => setMotDonne(e.target.value)}
+                required
+                />
+                {resFonction && ( <div className="rounded bg-white-100 p-2"> {resFonction} </div>)}
+            </div>
+
+            <div className="grid  grid-cols-2 p-2 gap-4">
+                <button onClick={executeCode} className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded p-2 col-span-1">Exécuter le code</button>
+                <button onClick={_showReponse} className={`${ showReponse ? "bg-orange-500 hover:bg-orange-700" : "bg-green-500 hover:bg-green-700" }  text-white font-bold rounded p-2 col-span-1`}> { showReponse ? 'Masquer la réponse' : 'Voir la réponse'}</button>
+                {showReponse && (
+                    <div className="rounded bg-gray-700 h-75 p-2 w-full col-span-2">
+                        <SyntaxHighlighter language="javascript" style={nightOwl} className="w-full">
+                            {reponse}      
+                        </SyntaxHighlighter>                                                                            
+                    </div>      
+                )}
+            </div>
+                
         </div>
     </>
     )
